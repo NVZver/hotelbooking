@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { HotelService } from 'src/app/hotel/services/hotel/hotel.service';
 import { MatSnackBar } from '@angular/material';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-hotel-booking',
@@ -19,7 +19,8 @@ export class HotelBookingComponent implements OnInit {
     private hotelService: HotelService,
     private snackBar: MatSnackBar,
     private activatedRoute: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private router: Router
   ) {
     this.formBooking = new FormGroup({
       'contactName': new FormControl('', [Validators.required]),
@@ -52,7 +53,7 @@ export class HotelBookingComponent implements OnInit {
     console.log(this.formBooking);
     this.hotelService.bookHotel({ ...this.formBooking.value, id: this.hotel.id }).subscribe({
       next: res => {
-        console.log(res);
+        this.router.navigate(['/hotel', this.hotel.id]);
 
         this.snackBar.open('Done', 'Close', {
           duration: 500,
