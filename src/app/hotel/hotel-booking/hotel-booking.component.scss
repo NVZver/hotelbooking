@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.hotel {
+  &-card {
+    flex-basis: 70%;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-action {
+    margin: 0 5px;
+  }
+}

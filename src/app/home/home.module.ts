@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HomeComponent } from 'src/app/home/home.component';
+import { HotelModule } from 'src/app/hotel/hotel.module';
 
 @NgModule({
   declarations: [
@@ -9,6 +10,7 @@ import { HomeComponent } from 'src/app/home/home.component';
     HomeComponent
   ],
   imports: [
+    HotelModule
   ],
   providers: [
   ]

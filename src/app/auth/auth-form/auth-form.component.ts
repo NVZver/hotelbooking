@@ -46,7 +46,7 @@ export class AuthFormComponent implements OnInit {
       this.authService.login(this.inputUserName.value, this.inputPassword.value)
         .subscribe({
           next: res => {
-            this.router.navigate(['home']);
+            this.router.navigate(['hotel']);
           },
           error: err => {
             console.log(err);

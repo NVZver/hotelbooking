@@ -1,0 +1,31 @@
+<div class="hotel-list">
+
+  <mat-card *ngFor="let hotel of hotels" class="hotel-list__item">
+    <mat-card-header>
+      <mat-card-title class="hotel__title-wrapper">
+        <a routerLink="{{hotel.id}}">{{hotel.name}}</a>
+      </mat-card-title>
+      <mat-card-subtitle>
+
+        <div class="hotel__reviews">
+          <div class="hotel__review">
+            <mat-icon>thumb_up</mat-icon>
+            <span>{{hotel.positiveReviews}}</span>
+          </div>
+          <div class="hotel__review">
+            <mat-icon>thumb_down</mat-icon>
+            <span>{{hotel.negativeReviews}}</span>
+          </div>
+        </div>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="hotel.image" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      {{hotel.description}}
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-flat-button color='primary' routerLink="{{hotel.id}}/book">Book</a>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

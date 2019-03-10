@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.hotel-info {
+  flex-basis: 70%;
+
+  &__photo {
+    height: 200px;
+
+    &s {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 10px 0;
+    }
+  }
+}

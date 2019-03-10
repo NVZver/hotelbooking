@@ -1,0 +1,32 @@
+<mat-card class="hotel-info" *ngIf="hotel">
+  <mat-card-header>
+    <mat-card-title class="hotel__title-wrapper">
+      {{hotel.name}}
+    </mat-card-title>
+    <mat-card-subtitle>
+      <div class="hotel__reviews">
+        <div class="hotel__review">
+          <mat-icon>thumb_up</mat-icon>
+          <span>{{hotel.positiveReviews}}</span>
+        </div>
+        <div class="hotel__review">
+          <mat-icon>thumb_down</mat-icon>
+          <span>{{hotel.negativeReviews}}</span>
+        </div>
+      </div>
+    </mat-card-subtitle>
+
+  </mat-card-header>
+  <mat-card-content>
+    <div class="hotel-info__description">
+      {{hotel.description}}
+    </div>
+    <div class="hotel-info__photos">
+      <img class="hotel-info__photo" [src]="hotel.image" alt="">
+    </div>
+    <div class="hotel-info__map"></div>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-flat-button color='primary' routerLink="book">Book</a>
+  </mat-card-actions>
+</mat-card>

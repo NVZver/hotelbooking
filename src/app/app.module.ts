@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { AuthModule } from 'src/app/auth/auth.module';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { HomeModule } from 'src/app/home/home.module';
+import { HotelModule } from 'src/app/hotel/hotel.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +18,8 @@ import { HomeModule } from 'src/app/home/home.module';
     HttpClientModule,
     AppRoutingModule,
     AuthModule,
-    HomeModule
+    HomeModule,
+    HotelModule
   ],
   providers: [],
   bootstrap: [
