@@ -24,4 +24,8 @@
       align-items: center;
     }
   }
+
+  &-action.mat-stroked-button {
+    margin: 0 5px;
+  }
 }

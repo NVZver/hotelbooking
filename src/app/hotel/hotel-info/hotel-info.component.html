@@ -27,6 +27,7 @@
     <div class="hotel-info__map"></div>
   </mat-card-content>
   <mat-card-actions>
-    <a mat-flat-button color='primary' routerLink="book">Book</a>
+    <a mat-flat-button color='primary' routerLink="book" class="hotel-action">Book</a>
+    <button mat-stroked-button (click)="back()" class="hotel-action">Back</button>
   </mat-card-actions>
 </mat-card>

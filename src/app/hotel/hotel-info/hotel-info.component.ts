@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HotelService } from 'src/app/hotel/services/hotel/hotel.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-hotel-info',
@@ -13,7 +14,8 @@ export class HotelInfoComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private hotelService: HotelService
+    private hotelService: HotelService,
+    private location: Location
   ) { }
 
   ngOnInit() {
@@ -34,5 +36,9 @@ export class HotelInfoComponent implements OnInit {
         console.log(err);
       }
     });
+  }
+
+  back() {
+    this.location.back();
   }
 }

@@ -6,6 +6,7 @@ import { HotelComponent } from 'src/app/hotel/hotel.component';
 import { HotelInfoComponent } from 'src/app/hotel/hotel-info/hotel-info.component';
 import { HotelBookingComponent } from 'src/app/hotel/hotel-booking/hotel-booking.component';
 import { HotelListComponent } from 'src/app/hotel/hotel-list/hotel-list.component';
+import { CanBookGuard } from 'src/app/guards/can-book.guard';
 
 const routes: Routes = [
   {
@@ -17,10 +18,10 @@ const routes: Routes = [
   },
   { path: 'hotel', component: HotelComponent, },
   { path: 'hotel/:id', component: HotelInfoComponent },
-  { path: 'hotel/:id/book', component: HotelBookingComponent },
+  { path: 'hotel/:id/book', component: HotelBookingComponent, canActivate: [CanBookGuard] },
   {
     path: '',
-    redirectTo: 'auth',
+    redirectTo: 'hotel',
     pathMatch: 'full'
   }
 ];
